@@ -3,7 +3,7 @@
 Getting started
 
 ```
-python -m venv .venv
+python3 -m venv .venv
 
 MACOS
 source .venv/bin/activate
