@@ -1,0 +1,62 @@
+Results for 1D L.csv dataset:
+Intercept: 0.1982
+Beta_1: 0.5494
+RMSE: 0.0518
+R Squared: 0.9011
+
+Results for 1D M.csv dataset:
+Intercept: 0.4012
+Beta_1: 0.3318
+RMSE: 0.1136
+R Squared: 0.4083
+
+Results for 1D H.csv dataset:
+Intercept: 0.3085
+Beta_1: 0.3133
+RMSE: 0.1357
+R Squared: 0.3014
+
+Results for 2D L.csv dataset:
+Intercept: 0.1980
+Beta_1: 0.5494
+Beta_2: -0.1665
+RMSE: 0.0518
+R Squared: 0.9065
+
+Results for 2D M.csv dataset:
+Intercept: 0.3266
+Beta_1: 0.3348
+Beta_2: 0.1113
+RMSE: 0.1125
+R Squared: 0.4525
+
+Results for 2D H.csv dataset:
+Intercept: 0.3235
+Beta_1: 0.3151
+Beta_2: 0.1342
+RMSE: 0.1354
+R Squared: 0.3516
+
+Results for 3D L.csv dataset:
+Intercept: 0.2144
+Beta_1: 0.5528
+Beta_2: -0.1648
+Beta_3: 0.2144
+RMSE: 0.0509
+R Squared: 0.9242
+
+Results for 3D M.csv dataset:
+Intercept: 0.4361
+Beta_1: 0.3368
+Beta_2: 0.1123
+Beta_3: -0.2689
+RMSE: 0.1123
+R Squared: 0.5353
+
+Results for 3D H.csv dataset:
+Intercept: 0.3268
+Beta_1: 0.3158
+Beta_2: 0.1345
+Beta_3: 0.2319
+RMSE: 0.1354
+R Squared: 0.4627
