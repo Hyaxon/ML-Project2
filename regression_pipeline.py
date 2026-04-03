@@ -13,6 +13,9 @@ datasets = [
     '3D L.csv', '3D M.csv', '3D H.csv'
 ]
 
+os.makedirs('Results', exist_ok=True)
+summary_rows = []
+
 with open('Results/results.txt', 'w') as f:
 
     for file in datasets:
@@ -36,15 +39,33 @@ with open('Results/results.txt', 'w') as f:
             
             # metrics
             mse = mean_squared_error(y, y_pred)
-            f.write(f"RMSE: {np.sqrt(mse):.4f}\n")
-            f.write(f"R Squared: {r2_score(y, y_pred):.4f}\n")
+            rmse = np.sqrt(mse)
+            r2 = r2_score(y, y_pred)
+
+            f.write(f"RMSE: {rmse:.4f}\n")
+            f.write(f"R Squared: {r2:.4f}\n")
         
             # predictions
             df = pd.DataFrame(y_pred, columns=['Predicted Y'])
             df.to_csv(f"Results/{file[:-4]}_pred.csv", index=False)
+
+            row = {
+                'dataset': file[:-4],
+                'num_predictors': X.shape[1],
+                'intercept': model.intercept_,
+                'beta_1': model.coef_[0] if len(model.coef_) > 0 else np.nan,
+                'beta_2': model.coef_[1] if len(model.coef_) > 1 else np.nan,
+                'beta_3': model.coef_[2] if len(model.coef_) > 2 else np.nan,
+                'rmse': rmse,
+                'r2': r2
+            }
+            summary_rows.append(row)
 
             if file != '3D H.csv':
                 f.write("\n")
 
         except FileNotFoundError:
             print(f"Error: file not found in directory. Try again.")
+
+summary_df = pd.DataFrame(summary_rows)
+summary_df.to_csv('Results/model_summary.csv', index=False)    
