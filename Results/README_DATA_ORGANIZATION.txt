@@ -1,6 +1,6 @@
 Project 2 Data Description
 
-The uploader CSVs contains the output data generated from the linear regression analysis.
+The uploaded CSVs contain the output data generated from the linear regression analysis.
 
 Files:
 
